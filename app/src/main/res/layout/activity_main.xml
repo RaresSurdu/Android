@@ -1,17 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.rares.android.MainActivity">
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.axl.myapplication.MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textview_descr"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:textSize="18dp"
+        android:text="Give your feedback about last job done at our garage: " />
+
+    <EditText
+        android:id="@+id/textedit_name"
+        android:layout_below="@id/textview_descr"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Your Name:"
+        android:inputType="textPersonName"
+        android:layout_width="fill_parent"/>
+
+
+    <EditText
+        android:id="@+id/textedit_feed"
+        android:layout_below="@id/textedit_name"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:hint="FeedBack:"
+        android:inputType="textMultiLine"
+        android:maxLength="255"
+        android:layout_width="fill_parent"/>
+
+
+    <Button
+        android:id="@+id/button_sendFeedback"
+        android:layout_height="wrap_content"
+        android:text="Send Feedback"
+        android:layout_below="@+id/textedit_feed"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content">
+    </Button>
+
+
+    <Button
+        android:id="@+id/button_vehicles"
+        android:layout_height="wrap_content"
+        android:text="Personal Vehicles"
+        android:layout_below="@+id/button_sendFeedback"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:layout_width="wrap_content">
+    </Button>
+
+
+
+
 </RelativeLayout>

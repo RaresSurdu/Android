@@ -1,4 +1,4 @@
-package com.example.rares.android;
+package com.example.rares.myapplication;
 
 import org.junit.Test;
 
