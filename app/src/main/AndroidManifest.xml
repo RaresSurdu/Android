@@ -1,22 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.rares.myapplication">
+          package="com.studentApp">
 
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="Rares Garage"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+  <uses-permission android:name="android.permission.INTERNET"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".DisplayVehiclesActivity" />
-        <activity android:name=".SingleListItem"></activity>
-    </application>
+  <application
+    android:name="com.studentApp.App"
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:supportsRtl="true"
+    android:theme="@style/AppTheme">
+    <activity
+      android:name="com.studentApp.StudentListActivity"
+      android:label="@string/app_name"
+      android:theme="@style/AppTheme.NoActionBar">
+
+      <!-- <intent-filter> -->
+      <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+      <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+      <!-- </intent-filter> -->
+    </activity>
+    <activity
+      android:name="com.studentApp.StudentDetailActivity"
+      android:label="@string/title_student_detail"
+      android:parentActivityName="com.studentApp.StudentListActivity"
+      android:theme="@style/AppTheme.NoActionBar">
+      <meta-data
+        android:name="android.support.PARENT_ACTIVITY"
+        android:value="com.studentApp.StudentListActivity"/>
+    </activity>
+    <activity
+      android:name="com.studentApp.Login"
+      android:label="@string/title_activity_login"
+      android:screenOrientation="portrait"
+      android:theme="@style/AppTheme.NoActionBar">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+
+    <provider
+      android:name="com.studentApp.content.provider.StudentContentProvider"
+      android:authorities="student"
+      android:enabled="true"
+      android:exported="false">
+    </provider>
+  </application>
 
 </manifest>
